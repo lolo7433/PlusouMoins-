@@ -1,0 +1,119 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+int choix=0, nombreMystere=0, nombre=0, x=0, y=0, ki=0, p=1, difficult=0, nbmax=0, nbmin=0 ;
+srand(time(NULL));
+nombreMystere = (rand() % (nbmax - nbmin + 1)) + nbmin;
+while(p==1)
+{
+printf ("1.Un joueur");
+printf("2.Deux joueurs");
+scanf("%d", &choix);
+
+switch (choix)
+{
+case 1:
+printf("1.Difficulté 100 ");
+printf("2.Difficulté 1000 ");
+scanf("%d", &difficult);
+switch (difficult)
+{
+case 1:
+nbmax=100, nbmin=0;
+nombreMystere = (rand() % (nbmax - nbmin + 1)) + nbmin;
+do
+{
+printf("Quel nombre ?\n");
+scanf("%d",&nombre);
+if(nombre > nombreMystere)
+{
+    printf("C'est moins\n");
+x++;
+}
+ else if(nombre < nombreMystere)
+{
+    printf("C'est plus\n");
+x++;
+}
+
+   else
+{
+    printf ("Vous avez gagne en %d coups!\n", x);
+printf("Vous voulez recommencer ? (1/0)");
+x++;
+scanf("%d", &p);
+}
+
+}while(nombre!=nombreMystere);
+break;
+
+case 2:
+nbmax=1000, nbmin=0;
+nombreMystere = (rand() % (nbmax - nbmin + 1)) + nbmin;
+do
+{
+printf("Quel nombre ?\n");
+scanf("%d",&nombre);
+if(nombre > nombreMystere)
+{
+    printf("C'est moins\n");
+x++;
+}
+ else if(nombre < nombreMystere)
+{
+    printf("C'est plus\n");
+x++;
+}
+
+   else
+{
+    printf ("Vous avez gagne en %d coups!\n", x);
+    x++;
+printf("Vous voulez recommencer ? (1/0)");
+scanf("%d", &p);
+}
+
+ }while(nombre!=nombreMystere);
+break;
+
+}break;
+
+
+case 2:
+printf("tapez le nombre");
+scanf("%d", &ki);
+system("cls");
+do
+{
+printf("Quel est nombre ?\n");
+scanf("%d",&nombre);
+if(nombre > ki)
+{
+    printf("C'est moins\n");
+y++;
+}
+ else if(nombre < ki)
+{
+    printf("C'est plus\n");
+y++;
+}
+
+   else
+{
+    printf ("Vous avez gagne en %d coups!\n", y);
+    x++;
+printf("Vous voulez recommencer ? (1/0)");
+scanf("%d", &p);
+}
+
+}while(nombre!=ki);
+break;
+}
+
+}
+
+}
